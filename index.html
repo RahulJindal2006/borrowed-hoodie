@@ -125,6 +125,82 @@
   @media (max-width:820px){.cart{grid-template-columns:1fr}.summary{position:static}}
   @media (max-width:520px){.line{grid-template-columns:80px 1fr}.line img{width:80px;height:80px}.line-right{grid-column:2;text-align:left}}
 
+  /* Checkout steps */
+  .steps{display:flex;gap:10px;flex-wrap:wrap;list-style:none;padding:0;margin:0 0 28px;font-size:.85rem;font-weight:600;color:var(--stone)}
+  .steps li{display:flex;align-items:center;gap:8px}
+  .steps li+li::before{content:"";width:22px;height:1px;background:var(--line);margin-right:2px}
+  .steps .n{width:24px;height:24px;border-radius:999px;border:1px solid var(--line);display:grid;place-items:center;font-size:.75rem}
+  .steps .on{color:var(--ink)}
+  .steps .on .n{background:var(--ink);border-color:var(--ink);color:#fff}
+  .steps .done .n{background:var(--ok);border-color:var(--ok);color:#fff}
+
+  /* Checkout */
+  .checkout{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+  .panel{border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px;margin-bottom:24px}
+  .panel h2{font-size:1.35rem;margin-bottom:6px}
+  .panel .sub{color:var(--stone);font-size:.92rem;margin:0 0 20px}
+  .form{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+  .form .full{grid-column:1/-1}
+  .form label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px}
+  .form input,.form select{width:100%;padding:12px 14px;border:1px solid #cfcfcf;border-radius:var(--radius-sm);font:inherit;font-size:.95rem;background:var(--paper);color:var(--ink)}
+  .form input:focus,.form select:focus{outline:2px solid var(--ink);outline-offset:1px;border-color:var(--ink)}
+  .form .err{display:none;color:#a33a2b;font-size:.8rem;margin-top:5px}
+  .form .bad input,.form .bad select{border-color:#a33a2b}
+  .form .bad .err{display:block}
+  @media (max-width:560px){.form{grid-template-columns:1fr}}
+  .sandbox{display:flex;gap:12px;align-items:flex-start;background:#fff7e0;border:1px solid #f0dca0;border-radius:var(--radius-sm);padding:14px 16px;font-size:.88rem;color:#5c4a12;margin-bottom:20px}
+  .sandbox b{display:block;margin-bottom:2px}
+  .sandbox p{margin:0}
+  .pay-status{min-height:1.2em;font-size:.9rem;margin:12px 0 0}
+  .pay-status.error{color:#a33a2b}
+  .pay-status.busy{color:var(--stone)}
+  .brands{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 18px}
+  .brands span{font-size:.72rem;font-weight:700;letter-spacing:.03em;padding:4px 9px;border:1px solid var(--line);border-radius:6px;color:var(--stone);transition:all .15s ease}
+  .brands span.on{border-color:var(--ink);background:var(--ink);color:#fff}
+  .brands.picked span:not(.on){opacity:.35}
+  .cc-wrap{position:relative}
+  .cc-brand{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:.72rem;font-weight:700;letter-spacing:.03em;padding:4px 9px;border-radius:6px;background:var(--mist);color:var(--stone);pointer-events:none;transition:all .15s ease}
+  .cc-brand.known{background:var(--ink);color:#fff}
+  #f-cc{padding-right:120px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+  #f-exp,#f-cvv{font-variant-numeric:tabular-nums}
+  .form .good input{border-color:var(--ok)}
+  .testcards{font-size:.84rem;margin-top:10px}
+  .testcards button{border:1px dashed #c9b26a;background:#fffdf4;color:#5c4a12;border-radius:6px;padding:4px 9px;margin:6px 6px 0 0;font-size:.8rem}
+  .testcards button:hover{background:#fff3cc}
+  #pay-btn{margin-top:22px}
+  #pay-btn[disabled]{opacity:.8;cursor:progress}
+  .spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .secure{display:flex;align-items:center;gap:8px;font-size:.82rem;color:var(--stone);margin-top:14px}
+  .secure svg{width:16px;height:16px;flex:none}
+  .mini{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #d7dfe1;font-size:.92rem}
+  .mini:last-of-type{border-bottom:0}
+  .mini .pic{position:relative}
+  .mini img{width:56px;height:56px;border-radius:8px;object-fit:cover;background:#fff}
+  .mini .q{position:absolute;top:-7px;right:-7px;min-width:20px;height:20px;border-radius:999px;background:var(--stone);color:#fff;font-size:.7rem;display:grid;place-items:center;padding:0 5px}
+  .mini .nm{font-weight:600;line-height:1.3}
+  .mini .sz{color:var(--stone);font-size:.82rem}
+  .edit-link{font-size:.88rem}
+  @media (max-width:860px){.checkout{grid-template-columns:1fr}}
+
+  /* Order confirmation */
+  .confirm{max-width:760px;margin:0 auto}
+  .confirm-head{text-align:center;margin-bottom:32px}
+  .confirm-head h1{font-size:clamp(2rem,4vw,2.75rem);margin-bottom:10px}
+  .confirm-head p{color:var(--stone);margin:0}
+  .ok-mark{width:72px;height:72px;border-radius:999px;background:var(--ok);color:#fff;display:grid;place-items:center;margin:0 auto 22px}
+  .ok-mark svg{width:34px;height:34px}
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px}
+  .facts div{background:var(--paper);padding:16px 18px}
+  .facts dt{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--stone);margin-bottom:4px}
+  .facts dd{margin:0;font-weight:600;word-break:break-all}
+  .pill{display:inline-block;background:#e9f4ee;color:var(--ok);border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:700}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .two p{margin:0;line-height:1.6}
+  @media (max-width:640px){.two{grid-template-columns:1fr}}
+  .confirm-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+  @media print{.announce,header.site,footer.site,.confirm-actions,.toast{display:none!important}}
+
   /* Toast */
   .toast{position:fixed;right:24px;top:96px;z-index:40;background:var(--ink);color:#fff;padding:14px 18px;border-radius:var(--radius-sm);box-shadow:0 12px 30px rgba(0,0,0,.18);display:flex;gap:14px;align-items:center;transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease}
   .toast.show{opacity:1;transform:none;pointer-events:auto}
@@ -198,7 +274,9 @@ const PRODUCTS = [
    desc:"Shorter and boxier, with a wide hood and ribbed hem. Pairs perfectly with high-waisted pants or joggers."}
 ];
 const SIZES = ["XS","S","M","L","XL","XXL"];
-const FREE_SHIP = 100, SHIP_FEE = 9.99;
+const FREE_SHIP = 100, SHIP_FEE = 9.99, TAX_RATE = 0.13; // 13% HST (Ontario)
+
+const CURRENCY = "CAD";
 const bySlug = s => PRODUCTS.find(p => p.slug === s);
 const money = n => "$" + n.toFixed(2);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -280,32 +358,58 @@ function bindProduct(p){
   });
 }
 
+/* ── Money in cents so totals always add up exactly ───────────────────────── */
+const cents = n => Math.round(n * 100);
+const fromCents = c => (c / 100).toFixed(2);
+const moneyC = c => "$" + fromCents(c);
+function cartLines(){ return loadCart().filter(i => bySlug(i.slug)).map(i => ({...i, p: bySlug(i.slug)})); }
+function totals(lines){
+  const sub = lines.reduce((s,l) => s + cents(l.p.price) * l.qty, 0);
+  const ship = sub >= cents(FREE_SHIP) || sub === 0 ? 0 : cents(SHIP_FEE);
+  const tax = Math.round((sub + ship) * TAX_RATE);
+  return {sub, ship, tax, total: sub + ship + tax};
+}
+function summaryRows(t){
+  return `<div class="row"><span>Subtotal</span><span>${moneyC(t.sub)}</span></div>
+      <div class="row"><span>Shipping</span><span>${t.ship ? moneyC(t.ship) : "Free"}</span></div>
+      <div class="row"><span>HST (13%)</span><span>${moneyC(t.tax)}</span></div>
+      <div class="row total"><span>Total</span><span>${moneyC(t.total)} ${CURRENCY}</span></div>`;
+}
+const CHECK = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>`;
+function steps(at){
+  const names = ["Cart","Details & payment","Confirmation"];
+  return `<ol class="steps" aria-label="Checkout progress">${names.map((n,i)=>{
+    const cls = i < at ? "done" : i === at ? "on" : "";
+    return `<li class="${cls}"${i===at?' aria-current="step"':""}><span class="n">${i < at ? "✓" : i+1}</span>${n}</li>`;
+  }).join("")}</ol>`;
+}
+const EMPTY_CART = `<div class="empty"><h1>Your cart is empty</h1><p>Browse the collection and add something you'll never want to give back.</p><a class="btn primary" href="${SITE}">Shop the collection</a></div>`;
+
+/* ── Cart ─────────────────────────────────────────────────────────────────── */
 function viewCart(){
-  const c = loadCart().filter(i => bySlug(i.slug));
-  if(!c.length) return `<div class="empty"><h1>Your cart is empty</h1><p>Browse the collection and add something you'll never want to give back.</p><a class="btn primary" href="${SITE}">Shop the collection</a></div>`;
-  const sub = c.reduce((s,i)=>s + bySlug(i.slug).price * i.qty, 0);
-  const ship = sub >= FREE_SHIP ? 0 : SHIP_FEE;
-  return `<div class="page-head"><h1>Your cart</h1><p>${cartQty()} item${cartQty()===1?"":"s"}</p></div>
+  const lines = cartLines();
+  if(!lines.length) return EMPTY_CART;
+  const t = totals(lines);
+  return `${steps(0)}<div class="page-head"><h1>Your cart</h1><p>${cartQty()} item${cartQty()===1?"":"s"}</p></div>
   <div class="cart">
-    <div class="lines">${c.map((i,idx)=>{ const p = bySlug(i.slug); return `
+    <div class="lines">${lines.map((l,idx)=>{ const p = l.p; return `
       <div class="line">
         <a href="#/product/${p.slug}"><img src="${imgUrl(p)}" alt="${esc(p.name)}"></a>
         <div>
           <h3><a href="#/product/${p.slug}">${esc(p.name)}</a></h3>
-          <p class="meta">Size ${esc(i.size)} · ${money(p.price)} each</p>
-          <div class="qty"><button type="button" data-line="${idx}" data-step="-1" aria-label="Decrease quantity">−</button><input type="number" value="${i.qty}" data-line="${idx}" min="1" max="99" aria-label="Quantity for ${esc(p.name)}"><button type="button" data-line="${idx}" data-step="1" aria-label="Increase quantity">+</button></div>
+          <p class="meta">${esc(p.colour)} · Size ${esc(l.size)} · ${money(p.price)} each</p>
+          <div class="qty"><button type="button" data-line="${idx}" data-step="-1" aria-label="Decrease quantity">−</button><input type="number" value="${l.qty}" data-line="${idx}" min="1" max="99" aria-label="Quantity for ${esc(p.name)}"><button type="button" data-line="${idx}" data-step="1" aria-label="Increase quantity">+</button></div>
         </div>
-        <div class="line-right"><div class="line-total">${money(p.price * i.qty)}</div><button type="button" class="remove" data-remove="${idx}">Remove</button></div>
+        <div class="line-right"><div class="line-total">${money(p.price * l.qty)}</div><button type="button" class="remove" data-remove="${idx}">Remove</button></div>
       </div>`; }).join("")}
     </div>
     <aside class="summary" aria-label="Order summary">
       <h2>Order summary</h2>
-      <div class="row"><span>Subtotal</span><span>${money(sub)}</span></div>
-      <div class="row"><span>Shipping</span><span>${ship ? money(ship) : "Free"}</span></div>
-      ${ship ? `<p class="hint">Add ${money(FREE_SHIP - sub)} more for free shipping.</p>` : ""}
-      <div class="row total"><span>Total</span><span>${money(sub + ship)} CAD</span></div>
-      <button type="button" class="btn primary block" id="buy">Buy now</button>
-      <p class="fineprint">Demo store for a class project. No payment is taken.</p>
+      ${summaryRows(t)}
+      ${t.ship ? `<p class="hint">Add ${moneyC(cents(FREE_SHIP) - t.sub)} more for free shipping.</p>` : ""}
+      <a class="btn primary block" href="#/checkout">Proceed to checkout</a>
+      <a class="btn ghost block" style="margin-top:10px" href="${SITE}">Continue shopping</a>
+      <p class="fineprint">Test-mode checkout. No real money is charged.</p>
     </aside>
   </div>`;
 }
@@ -317,18 +421,279 @@ function bindCart(){
   }));
   document.querySelectorAll(".line .qty input").forEach(inp => inp.addEventListener("change", () => set(+inp.dataset.line, parseInt(inp.value,10) || 1)));
   document.querySelectorAll("[data-remove]").forEach(b => b.addEventListener("click", () => {
-    const c = loadCart(); c.splice(+b.dataset.remove, 1); saveCart(c); render();
+    const c = loadCart(); const gone = c.splice(+b.dataset.remove, 1)[0]; saveCart(c); render();
+    if(gone && bySlug(gone.slug)) toast(`Removed: ${bySlug(gone.slug).name} (${gone.size})`);
   }));
-  const buy = document.getElementById("buy");
-  if(buy) buy.addEventListener("click", () => { saveCart([]); location.hash = "#/thanks"; });
 }
 
-function viewThanks(){
-  return `<div class="thanks">
-    <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
-    <h1>Thanks for buying!</h1>
-    <p>Your order is in. We hope you love it as much as we do!</p>
-    <a class="btn primary" href="${SITE}">Continue shopping</a>
+/* ── Checkout ─────────────────────────────────────────────────────────────── */
+const PROVINCES = [["ON","Ontario"],["AB","Alberta"],["BC","British Columbia"],["MB","Manitoba"],["NB","New Brunswick"],["NL","Newfoundland and Labrador"],["NS","Nova Scotia"],["NT","Northwest Territories"],["NU","Nunavut"],["PE","Prince Edward Island"],["QC","Quebec"],["SK","Saskatchewan"],["YT","Yukon"]];
+const FIELDS = [
+  {id:"first", label:"First name", auto:"given-name", req:true},
+  {id:"last", label:"Last name", auto:"family-name", req:true},
+  {id:"email", label:"Email", type:"email", auto:"email", req:true, full:true, test:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v), msg:"Enter a valid email address."},
+  {id:"address", label:"Street address", auto:"address-line1", req:true, full:true},
+  {id:"apt", label:"Apartment, suite, etc. (optional)", auto:"address-line2", full:true},
+  {id:"city", label:"City", auto:"address-level2", req:true},
+  {id:"prov", label:"Province", select:true, auto:"address-level1", req:true},
+  {id:"postal", label:"Postal code", auto:"postal-code", req:true, test:v=>/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/.test(v), msg:"Use a Canadian postal code, like N2L 3C5."},
+  {id:"phone", label:"Phone (optional)", type:"tel", auto:"tel"}
+];
+function loadCustomer(){ try{ return JSON.parse(localStorage.getItem("bh-customer") || "{}") || {}; }catch(e){ return {}; } }
+function saveCustomer(d){ try{ localStorage.setItem("bh-customer", JSON.stringify(d)); }catch(e){} }
+
+function viewCheckout(){
+  const lines = cartLines();
+  if(!lines.length) return EMPTY_CART;
+  const t = totals(lines), saved = loadCustomer();
+  const field = f => `<div class="${f.full ? "full" : ""}" data-field="${f.id}">
+      <label for="f-${f.id}">${f.label}</label>
+      ${f.select
+        ? `<select id="f-${f.id}" autocomplete="${f.auto}"><option value="">Select…</option>${PROVINCES.map(([c,n])=>`<option value="${c}"${saved[f.id]===c?" selected":""}>${n}</option>`).join("")}</select>`
+        : `<input id="f-${f.id}" type="${f.type||"text"}" autocomplete="${f.auto}" value="${esc(saved[f.id]||"")}"${f.req?" required":""}>`}
+      <div class="err">${f.msg || "This field is required."}</div>
+    </div>`;
+  return `${steps(1)}<div class="page-head"><h1>Checkout</h1></div>
+  <div class="checkout">
+    <div>
+      <section class="panel" aria-labelledby="h-ship">
+        <h2 id="h-ship">Contact &amp; shipping</h2>
+        <p class="sub">Where should we send your order?</p>
+        <form class="form" id="ship-form" novalidate>${FIELDS.map(field).join("")}</form>
+      </section>
+      <section class="panel" aria-labelledby="h-pay">
+        <h2 id="h-pay">Payment</h2>
+        <p class="sub">All transactions are secure and encrypted.</p>
+        <div class="sandbox" role="note"><span aria-hidden="true">🧪</span><div><b>Test mode</b><p>This is a class project: no real money is charged and real cards are not accepted. Use a test card with any future expiry date and any CVC.</p><div class="testcards">${TEST_CHIPS.map(c=>`<button type="button" data-fill="${c.n}">${c.label}</button>`).join("")}</div></div></div>
+        <div class="brands" id="brands" aria-hidden="true">${CARD_NAMES.map(b=>`<span data-brand="${b}">${b}</span>`).join("")}</div>
+        <form class="form" id="card-form" novalidate>
+          <div class="full" data-card="number"><label for="c-number">Card number</label><div class="cc-wrap"><input id="c-number" inputmode="numeric" autocomplete="cc-number" placeholder="1234 1234 1234 1234" maxlength="23"><span class="cc-brand" id="c-brand" aria-live="polite">Card</span></div><div class="err"></div></div>
+          <div class="full" data-card="name"><label for="c-name">Name on card</label><input id="c-name" autocomplete="cc-name"><div class="err"></div></div>
+          <div data-card="exp"><label for="c-exp">Expiry date</label><input id="c-exp" inputmode="numeric" autocomplete="cc-exp" placeholder="MM / YY" maxlength="7"><div class="err"></div></div>
+          <div data-card="cvc"><label for="c-cvc" id="c-cvc-label">Security code (CVV)</label><input id="c-cvc" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4"><div class="err"></div></div>
+          <div class="full"><button type="submit" class="btn primary block" id="pay-btn">Pay ${moneyC(t.total)} ${CURRENCY}</button></div>
+        </form>
+        <p class="pay-status" id="pay-status" role="status" aria-live="polite"></p>
+        <p class="secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Your card details are checked in your browser only. They are never stored or sent to our servers.</p>
+      </section>
+    </div>
+    <aside class="summary" aria-label="Order summary">
+      <h2>Order summary</h2>
+      ${lines.map(l=>`<div class="mini"><div class="pic"><img src="${imgUrl(l.p)}" alt=""><span class="q">${l.qty}</span></div><div><div class="nm">${esc(l.p.name)}</div><div class="sz">${esc(l.p.colour)} · Size ${esc(l.size)}</div></div><div>${money(l.p.price*l.qty)}</div></div>`).join("")}
+      <p style="margin:6px 0 14px"><a class="edit-link" href="#/cart">Edit cart</a></p>
+      ${summaryRows(t)}
+    </aside>
+  </div>`;
+}
+
+function readForm(show){
+  const d = {}; let firstBad = null;
+  FIELDS.forEach(f => {
+    const el = document.getElementById("f-"+f.id); if(!el) return;
+    const v = el.value.trim(); d[f.id] = v;
+    const bad = !!((f.req && !v) || (v && f.test && !f.test(v)));
+    const wrap = document.querySelector(`[data-field="${f.id}"]`);
+    if(show) wrap.classList.toggle("bad", bad);
+    if(bad && !firstBad) firstBad = el;
+  });
+  if(d.postal) d.postal = d.postal.toUpperCase().replace(/^(\w{3})[ -]?(\w{3})$/, "$1 $2");
+  if(firstBad){ if(show){ firstBad.focus(); firstBad.scrollIntoView({block:"center", behavior:"smooth"}); } return null; }
+  return d;
+}
+
+/* ── Test-mode card payments ──────────────────────────────────────────────
+   Works like Stripe's test mode: only the published test card numbers below
+   are accepted. Card details are checked in the browser and then discarded;
+   only the brand and last 4 digits are kept for the order confirmation. */
+const TEST_CARDS = {
+  "4242424242424242": {ok:true},                                   // Visa
+  "4000056655665556": {ok:true},                                   // Visa debit
+  "5555555555554444": {ok:true},                                   // Mastercard
+  "2223003122003222": {ok:true},                                   // Mastercard (2-series)
+  "378282246310005":  {ok:true},                                   // American Express
+  "6011111111111117": {ok:true},                                   // Discover
+  "3566002020360505": {ok:true},                                   // JCB
+  "36227206271667":   {ok:true},                                   // Diners Club
+  "6200000000000005": {ok:true},                                   // UnionPay
+  "4000000000000002": {ok:false, msg:"Your card was declined. Try a different card."},
+  "4000000000009995": {ok:false, msg:"Your card has insufficient funds. Try a different card."},
+  "4000000000000069": {ok:false, msg:"Your card has expired. Try a different card."},
+  "4000000000000127": {ok:false, msg:"Your card's security code is incorrect.", field:"cvc"}
+};
+const digits = v => String(v).replace(/\D/g, "");
+const CARD_NAMES = ["Visa","Mastercard","Amex","Discover","JCB","Diners Club","UnionPay"];
+const TEST_CHIPS = [
+  {label:"Visa 4242 4242 4242 4242", n:"4242424242424242"},
+  {label:"Mastercard 5555 5555 5555 4444", n:"5555555555554444"},
+  {label:"Amex 3782 822463 10005", n:"378282246310005"},
+  {label:"Declined 4000 0000 0000 0002", n:"4000000000000002"}
+];
+/* Detects the card network from the first digits (the IIN/BIN ranges). */
+function cardBrand(n){
+  if(/^4/.test(n)) return "Visa";
+  if(/^(5[1-5]|2(2[2-9]|[3-6]\d|7[01]|720))/.test(n)) return "Mastercard";
+  if(/^3[47]/.test(n)) return "Amex";
+  if(/^(6011|64[4-9]|65)/.test(n)) return "Discover";
+  if(/^35(2[89]|[3-8]\d)/.test(n)) return "JCB";
+  if(/^(36|30[0-5]|3095|38|39)/.test(n)) return "Diners Club";
+  if(/^62/.test(n)) return "UnionPay";
+  return "";
+}
+const cardLengths = b => ({Amex:[15], "Diners Club":[14,15,16,17,18,19], Visa:[13,16,19]})[b] || [16,17,18,19];
+function luhn(n){ let s = 0, alt = false; for(let i = n.length - 1; i >= 0; i--){ let d = +n[i]; if(alt){ d *= 2; if(d > 9) d -= 9; } s += d; alt = !alt; } return s % 10 === 0; }
+function formatCard(n){
+  const b = cardBrand(n);
+  if(b === "Diners Club" && n.length <= 14) return [n.slice(0,4), n.slice(4,10), n.slice(10,14)].filter(Boolean).join(" ");
+  if(b === "Amex") return [n.slice(0,4), n.slice(4,10), n.slice(10,15)].filter(Boolean).join(" ");
+  return n.slice(0,19).replace(/(\d{4})(?=\d)/g, "$1 ");
+}
+function parseExp(v){ const d = digits(v); return {mm: +d.slice(0,2), yy: +d.slice(2,4), ok: d.length === 4}; }
+function expValid(v){
+  const {mm, yy, ok} = parseExp(v); if(!ok || mm < 1 || mm > 12) return "Enter a valid expiry date.";
+  const now = new Date(), y = 2000 + yy, endOfMonth = new Date(y, mm, 1);
+  if(endOfMonth <= now) return "Your card's expiry date is in the past.";
+  if(y > now.getFullYear() + 20) return "Enter a valid expiry date.";
+  return "";
+}
+function randId(len, chars){ let s = ""; const a = new Uint32Array(len); (window.crypto || {getRandomValues:x=>x.map(()=>Math.random()*4e9)}).getRandomValues(a); for(const n of a) s += chars[n % chars.length]; return s; }
+
+function newOrderNumber(){
+  return "BH-" + Date.now().toString(36).toUpperCase().slice(-5) + Math.random().toString(36).slice(2,5).toUpperCase();
+}
+let memoryOrders = [];
+function loadOrders(){ try{ const v = JSON.parse(localStorage.getItem("bh-orders") || "[]"); return Array.isArray(v) ? v : []; }catch(e){ return memoryOrders; } }
+function saveOrder(o){ const all = [o, ...loadOrders().filter(x => x.no !== o.no)].slice(0, 25); memoryOrders = all; try{ localStorage.setItem("bh-orders", JSON.stringify(all)); }catch(e){} }
+
+function bindCheckout(){
+  const form = document.getElementById("ship-form");
+  if(!form) return;
+  const status = document.getElementById("pay-status");
+  const say = (msg, kind) => { status.textContent = msg; status.className = "pay-status " + (kind || ""); };
+  form.addEventListener("input", e => {
+    const d = {}; FIELDS.forEach(f => { const el = document.getElementById("f-"+f.id); if(el) d[f.id] = el.value.trim(); }); saveCustomer(d);
+    const wrap = e.target.closest("[data-field]"); if(wrap) wrap.classList.remove("bad");
+  });
+  form.addEventListener("submit", e => e.preventDefault());
+
+  const cardForm = document.getElementById("card-form");
+  const num = document.getElementById("c-number"), name = document.getElementById("c-name");
+  const exp = document.getElementById("c-exp"), cvc = document.getElementById("c-cvc");
+  const brandEl = document.getElementById("c-brand"), payBtn = document.getElementById("pay-btn");
+  const payLabel = payBtn.textContent;
+  const brandsRow = document.getElementById("brands"), cvcLabel = document.getElementById("c-cvc-label");
+  const showBrand = b => {
+    brandEl.textContent = b || "Card"; brandEl.classList.toggle("known", !!b);
+    brandsRow.classList.toggle("picked", !!b);
+    brandsRow.querySelectorAll("span").forEach(s => s.classList.toggle("on", s.dataset.brand === b));
+    cvc.placeholder = b === "Amex" ? "4 digits" : "3 digits";
+    cvcLabel.textContent = b === "Amex" ? "Security code (4 digits on front)" : "Security code (CVV)";
+  };
+  const mark = (key, msg) => { const w = cardForm.querySelector(`[data-card="${key}"]`); w.classList.toggle("bad", !!msg); if(msg) w.querySelector(".err").textContent = msg; };
+
+  num.addEventListener("input", () => {
+    const n = digits(num.value).slice(0, 19); num.value = formatCard(n);
+    showBrand(cardBrand(n)); mark("number", "");
+  });
+  exp.addEventListener("input", e => {
+    let d = digits(exp.value).slice(0, 4);
+    if(d.length === 1 && +d > 1) d = "0" + d;
+    exp.value = d.length > 2 ? d.slice(0,2) + " / " + d.slice(2) : (d.length === 2 && e.inputType !== "deleteContentBackward" ? d + " / " : d);
+    mark("exp", "");
+  });
+  cvc.addEventListener("input", () => { cvc.value = digits(cvc.value).slice(0, 4); mark("cvc", ""); });
+  name.addEventListener("input", () => mark("name", ""));
+
+  document.querySelectorAll("[data-fill]").forEach(btn => btn.addEventListener("click", () => {
+    const c = loadCustomer(), n = btn.dataset.fill;
+    num.value = formatCard(n); showBrand(cardBrand(n));
+    name.value = [c.first, c.last].filter(Boolean).join(" ") || "Test Customer";
+    exp.value = "12 / " + String((new Date().getFullYear() + 2) % 100).padStart(2, "0");
+    cvc.value = cardBrand(n) === "Amex" ? "1234" : "123"; ["number","name","exp","cvc"].forEach(k => mark(k, "")); say("");
+  }));
+
+  cardForm.addEventListener("submit", e => {
+    e.preventDefault(); say("");
+    const customer = readForm(true);
+    if(!customer){ say("Please complete your shipping details first.", "error"); return; }
+    if(!cartLines().length){ say("Your cart is empty.", "error"); return; }
+
+    const n = digits(num.value), brand = cardBrand(n);
+    const errs = {
+      number: !n ? "Enter your card number." : !brand ? "We accept Visa, Mastercard, Amex, Discover, JCB, Diners Club and UnionPay." : !cardLengths(brand).includes(n.length) ? `Your ${brand} number is incomplete.` : !luhn(n) ? "Your card number is invalid." : "",
+      name: name.value.trim() ? "" : "Enter the name on your card.",
+      exp: exp.value.trim() ? expValid(exp.value) : "Enter your card's expiry date.",
+      cvc: !cvc.value ? "Enter your card's security code." : cvc.value.length !== (brand === "Amex" ? 4 : 3) ? "Your card's security code is incomplete." : ""
+    };
+    Object.entries(errs).forEach(([k, m]) => mark(k, m));
+    const firstBad = Object.keys(errs).find(k => errs[k]);
+    if(firstBad){ ({number:num, name, exp, cvc})[firstBad].focus(); say("Please check your card details.", "error"); return; }
+
+    const test = TEST_CARDS[n];
+    if(!test){
+      num.value = ""; showBrand(""); cvc.value = "";
+      mark("number", "Real cards aren't accepted in this demo store. Use one of the test cards above.");
+      num.focus(); say("This is a test-mode checkout, so no real card was charged.", "error"); return;
+    }
+
+    payBtn.disabled = true; payBtn.innerHTML = `<span class="spinner" aria-hidden="true"></span>Processing payment…`;
+    say("Contacting the payment processor…", "busy");
+    setTimeout(() => {
+      payBtn.disabled = false; payBtn.textContent = payLabel;
+      if(!test.ok){
+        if(test.field) mark(test.field, test.msg); else mark("number", test.msg);
+        say(test.msg, "error"); return;
+      }
+      const lines = cartLines(), t = totals(lines), no = newOrderNumber();
+      saveOrder({
+        no, placedAt: new Date().toISOString(), status: "PAID", customer, totals: t,
+        card: {brand: brand || "Card", last4: n.slice(-4)},
+        txn: "TXN-" + randId(12, "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"),
+        auth: randId(6, "0123456789"),
+        items: lines.map(l => ({slug:l.p.slug, name:l.p.name, colour:l.p.colour, size:l.size, qty:l.qty, price:l.p.price}))
+      });
+      num.value = exp.value = cvc.value = name.value = ""; // the full card number and CVV are never kept
+      saveCart([]);
+      location.hash = "#/order/" + no;
+    }, 1400);
+  });
+}
+
+/* ── Order confirmation ───────────────────────────────────────────────────── */
+function viewOrder(no){
+  const o = loadOrders().find(x => x.no === no);
+  if(!o || !o.card) return `<div class="empty"><h1>Order not found</h1><p>We couldn't find that order on this device.</p><a class="btn primary" href="${SITE}">Shop the collection</a></div>`;
+  const c = o.customer || {}, t = o.totals;
+  const prov = (PROVINCES.find(p => p[0] === c.prov) || [c.prov])[0];
+  const when = new Date(o.placedAt).toLocaleString("en-CA", {dateStyle:"long", timeStyle:"short"});
+  return `${steps(3)}<div class="confirm">
+    <div class="confirm-head">
+      <div class="ok-mark">${CHECK}</div>
+      <h1>Thanks, ${esc(c.first || "friend")}! Your order is confirmed.</h1>
+      <p>Your payment went through and your order is in. We hope you love it as much as we do!</p>
+    </div>
+    <dl class="facts">
+      <div><dt>Order number</dt><dd>${esc(o.no)}</dd></div>
+      <div><dt>Date</dt><dd>${esc(when)}</dd></div>
+      <div><dt>Payment</dt><dd><span class="pill">Paid</span> ${esc(o.card.brand)} •••• ${esc(o.card.last4)}</dd></div>
+      <div><dt>Transaction ID</dt><dd>${esc(o.txn)}</dd></div>
+    </dl>
+    <section class="panel">
+      <div class="two">
+        <div><h2 style="font-size:1.1rem;margin-bottom:8px">Shipping to</h2>
+          <p>${esc(c.first)} ${esc(c.last)}<br>${esc(c.address)}${c.apt ? ", " + esc(c.apt) : ""}<br>${esc(c.city)}, ${esc(prov)} ${esc(c.postal)}<br>Canada</p></div>
+        <div><h2 style="font-size:1.1rem;margin-bottom:8px">Contact &amp; payment</h2>
+          <p>${esc(c.email)}${c.phone ? "<br>" + esc(c.phone) : ""}<br>${esc(o.card.brand)} ending in ${esc(o.card.last4)} · Auth code ${esc(o.auth)}<br><span style="color:var(--stone);font-size:.88rem">Test-mode payment. No real money was charged.</span></p></div>
+      </div>
+    </section>
+    <section class="panel">
+      <h2 style="font-size:1.1rem;margin-bottom:8px">Items</h2>
+      ${o.items.map(i => { const p = bySlug(i.slug); return `<div class="mini"><div class="pic">${p ? `<img src="${imgUrl(p)}" alt="">` : ""}<span class="q">${i.qty}</span></div><div><div class="nm">${esc(i.name)}</div><div class="sz">${esc(i.colour)} · Size ${esc(i.size)} · ${money(i.price)} each</div></div><div>${money(i.price*i.qty)}</div></div>`; }).join("")}
+      <div style="margin-top:10px">${summaryRows(t)}</div>
+    </section>
+    <div class="confirm-actions">
+      <a class="btn primary" href="${SITE}">Continue shopping</a>
+      <button type="button" class="btn ghost" onclick="window.print()">Print receipt</button>
+    </div>
   </div>`;
 }
 
@@ -340,8 +705,14 @@ function render(){
     const p = bySlug(parts[1]); view.innerHTML = viewProduct(p); bindProduct(p); title = p.name;
   } else if(parts[0] === "cart"){
     view.innerHTML = viewCart(); bindCart(); title = "Your cart";
+  } else if(parts[0] === "checkout"){
+    view.innerHTML = viewCheckout(); bindCheckout(); title = "Checkout";
+  } else if(parts[0] === "order"){
+    view.innerHTML = viewOrder(decodeURIComponent(parts[1] || "")); title = "Order confirmed";
   } else if(parts[0] === "thanks"){
-    view.innerHTML = viewThanks(); title = "Thank you";
+    const last = loadOrders()[0];
+    if(last){ location.replace("#/order/" + last.no); return; }
+    view.innerHTML = viewShop();
   } else {
     view.innerHTML = viewShop();
   }

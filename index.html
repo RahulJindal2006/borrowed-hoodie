@@ -10,9 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#222222;       
+    --ink:#222222;        /* matches the WordPress site's foreground */
     --paper:#ffffff;
-    --mist:#ecf2f3;       
+    --mist:#ecf2f3;       /* matches the site's tertiary card colour */
     --stone:#666666;
     --line:#e6e6e6;
     --ok:#2f6b4f;
@@ -497,6 +497,7 @@ function readForm(show){
    Card details are validated in the browser (brand, length, Luhn checksum,
    expiry, CVV) and never sent anywhere or saved. Only the brand and last 4
    digits are kept for the receipt. A few special numbers simulate failures. */
+const DEMO_CARD = "1234123412341234";
 const TEST_CARDS = {
   "4242424242424242": {ok:true},                                   // Visa
   "4000056655665556": {ok:true},                                   // Visa debit
@@ -594,7 +595,13 @@ function bindCheckout(){
     if(!cartLines().length){ say("Your cart is empty.", "error"); return; }
 
     const n = digits(num.value), brand = cardBrand(n);
-    const errs = {
+    const demo = n === DEMO_CARD; // the placeholder number works with any name, expiry and CVV
+    const errs = demo ? {
+      number: "",
+      name: name.value.trim() ? "" : "Enter the name on your card.",
+      exp: exp.value.trim() ? "" : "Enter your card's expiry date.",
+      cvc: cvc.value ? "" : "Enter your card's security code."
+    } : {
       number: !n ? "Enter your card number." : !brand ? "We accept Visa, Mastercard, Amex, Discover, JCB, Diners Club and UnionPay." : !cardLengths(brand).includes(n.length) ? `Your ${brand} number is incomplete.` : !luhn(n) ? "Your card number is invalid." : "",
       name: name.value.trim() ? "" : "Enter the name on your card.",
       exp: exp.value.trim() ? expValid(exp.value) : "Enter your card's expiry date.",
@@ -655,7 +662,7 @@ function viewOrder(no){
         <div><h2 style="font-size:1.1rem;margin-bottom:8px">Shipping to</h2>
           <p>${esc(c.first)} ${esc(c.last)}<br>${esc(c.address)}${c.apt ? ", " + esc(c.apt) : ""}<br>${esc(c.city)}, ${esc(prov)} ${esc(c.postal)}<br>Canada</p></div>
         <div><h2 style="font-size:1.1rem;margin-bottom:8px">Contact &amp; payment</h2>
-          <p>${esc(c.email)}${c.phone ? "<br>" + esc(c.phone) : ""}<br>${esc(o.card.brand)} ending in ${esc(o.card.last4)} · Auth code ${esc(o.auth)}<br><span style="color:var(--stone);font-size:.88rem">Demo store for a class project. No real money was charged.</span></p></div>
+          <p>${esc(c.email)}${c.phone ? "<br>" + esc(c.phone) : ""}<br>${esc(o.card.brand)} ending in ${esc(o.card.last4)} · Auth code ${esc(o.auth)}</p></div>
       </div>
     </section>
     <section class="panel">

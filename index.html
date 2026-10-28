@@ -10,9 +10,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#222222;        /* matches the WordPress site's foreground */
+    --ink:#222222;       
     --paper:#ffffff;
-    --mist:#ecf2f3;       /* matches the site's tertiary card colour */
+    --mist:#ecf2f3;       
     --stone:#666666;
     --line:#e6e6e6;
     --ok:#2f6b4f;
@@ -135,11 +135,11 @@
   .steps .done .n{background:var(--ok);border-color:var(--ok);color:#fff}
 
   /* Checkout */
-  .checkout{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
-  .panel{border:1px solid var(--line);border-radius:var(--radius-lg);padding:26px;margin-bottom:24px}
+  .checkout{display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:start}
+  .panel{border:1px solid var(--line);border-radius:var(--radius-lg);padding:34px;margin-bottom:32px}
   .panel h2{font-size:1.35rem;margin-bottom:6px}
   .panel .sub{color:var(--stone);font-size:.92rem;margin:0 0 20px}
-  .form{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+  .form{display:grid;grid-template-columns:1fr 1fr;gap:20px 20px}
   .form .full{grid-column:1/-1}
   .form label{display:block;font-size:.85rem;font-weight:600;margin-bottom:6px}
   .form input,.form select{width:100%;padding:12px 14px;border:1px solid #cfcfcf;border-radius:var(--radius-sm);font:inherit;font-size:.95rem;background:var(--paper);color:var(--ink)}
@@ -148,25 +148,15 @@
   .form .bad input,.form .bad select{border-color:#a33a2b}
   .form .bad .err{display:block}
   @media (max-width:560px){.form{grid-template-columns:1fr}}
-  .sandbox{display:flex;gap:12px;align-items:flex-start;background:#fff7e0;border:1px solid #f0dca0;border-radius:var(--radius-sm);padding:14px 16px;font-size:.88rem;color:#5c4a12;margin-bottom:20px}
-  .sandbox b{display:block;margin-bottom:2px}
-  .sandbox p{margin:0}
   .pay-status{min-height:1.2em;font-size:.9rem;margin:12px 0 0}
   .pay-status.error{color:#a33a2b}
   .pay-status.busy{color:var(--stone)}
-  .brands{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 18px}
-  .brands span{font-size:.72rem;font-weight:700;letter-spacing:.03em;padding:4px 9px;border:1px solid var(--line);border-radius:6px;color:var(--stone);transition:all .15s ease}
-  .brands span.on{border-color:var(--ink);background:var(--ink);color:#fff}
-  .brands.picked span:not(.on){opacity:.35}
   .cc-wrap{position:relative}
   .cc-brand{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:.72rem;font-weight:700;letter-spacing:.03em;padding:4px 9px;border-radius:6px;background:var(--mist);color:var(--stone);pointer-events:none;transition:all .15s ease}
   .cc-brand.known{background:var(--ink);color:#fff}
   #f-cc{padding-right:120px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
   #f-exp,#f-cvv{font-variant-numeric:tabular-nums}
   .form .good input{border-color:var(--ok)}
-  .testcards{font-size:.84rem;margin-top:10px}
-  .testcards button{border:1px dashed #c9b26a;background:#fffdf4;color:#5c4a12;border-radius:6px;padding:4px 9px;margin:6px 6px 0 0;font-size:.8rem}
-  .testcards button:hover{background:#fff3cc}
   #pay-btn{margin-top:22px}
   #pay-btn[disabled]{opacity:.8;cursor:progress}
   .spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,.35);border-top-color:#fff;border-radius:50%;animation:spin .8s linear infinite}
@@ -184,18 +174,22 @@
   @media (max-width:860px){.checkout{grid-template-columns:1fr}}
 
   /* Order confirmation */
-  .confirm{max-width:760px;margin:0 auto}
-  .confirm-head{text-align:center;margin-bottom:32px}
-  .confirm-head h1{font-size:clamp(2rem,4vw,2.75rem);margin-bottom:10px}
+  .confirm{max-width:980px;margin:0 auto}
+  .confirm-head{text-align:center;margin-bottom:44px}
+  .confirm-head h1{font-size:clamp(1.9rem,3.6vw,2.6rem);margin-bottom:14px;line-height:1.2}
   .confirm-head p{color:var(--stone);margin:0}
   .ok-mark{width:72px;height:72px;border-radius:999px;background:var(--ok);color:#fff;display:grid;place-items:center;margin:0 auto 22px}
   .ok-mark svg{width:34px;height:34px}
-  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:24px}
-  .facts div{background:var(--paper);padding:16px 18px}
-  .facts dt{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:var(--stone);margin-bottom:4px}
-  .facts dd{margin:0;font-weight:600;word-break:break-all}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;margin:0 0 32px}
+  @media (max-width:860px){.facts{grid-template-columns:1fr 1fr}}
+  @media (max-width:460px){.facts{grid-template-columns:1fr}}
+  .facts div{background:var(--paper);padding:22px 24px}
+  .facts dt{font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--stone);margin-bottom:8px}
+  .facts dd{margin:0;font-weight:600;font-size:.98rem;line-height:1.45}
+  .facts .nowrap{white-space:nowrap}
+  .facts .pill{margin-bottom:6px}
   .pill{display:inline-block;background:#e9f4ee;color:var(--ok);border-radius:999px;padding:2px 10px;font-size:.8rem;font-weight:700}
-  .two{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
   .two p{margin:0;line-height:1.6}
   @media (max-width:640px){.two{grid-template-columns:1fr}}
   .confirm-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
@@ -464,8 +458,6 @@ function viewCheckout(){
       <section class="panel" aria-labelledby="h-pay">
         <h2 id="h-pay">Payment</h2>
         <p class="sub">All transactions are secure and encrypted.</p>
-        <div class="sandbox" role="note"><span aria-hidden="true">🧪</span><div><b>Test mode</b><p>This is a class project: no real money is charged and real cards are not accepted. Use a test card with any future expiry date and any CVC.</p><div class="testcards">${TEST_CHIPS.map(c=>`<button type="button" data-fill="${c.n}">${c.label}</button>`).join("")}</div></div></div>
-        <div class="brands" id="brands" aria-hidden="true">${CARD_NAMES.map(b=>`<span data-brand="${b}">${b}</span>`).join("")}</div>
         <form class="form" id="card-form" novalidate>
           <div class="full" data-card="number"><label for="c-number">Card number</label><div class="cc-wrap"><input id="c-number" inputmode="numeric" autocomplete="cc-number" placeholder="1234 1234 1234 1234" maxlength="23"><span class="cc-brand" id="c-brand" aria-live="polite">Card</span></div><div class="err"></div></div>
           <div class="full" data-card="name"><label for="c-name">Name on card</label><input id="c-name" autocomplete="cc-name"><div class="err"></div></div>
@@ -501,10 +493,10 @@ function readForm(show){
   return d;
 }
 
-/* ── Test-mode card payments ──────────────────────────────────────────────
-   Works like Stripe's test mode: only the published test card numbers below
-   are accepted. Card details are checked in the browser and then discarded;
-   only the brand and last 4 digits are kept for the order confirmation. */
+/* ── Card payments (demo) ──────────────────────────────────────────────────
+   Card details are validated in the browser (brand, length, Luhn checksum,
+   expiry, CVV) and never sent anywhere or saved. Only the brand and last 4
+   digits are kept for the receipt. A few special numbers simulate failures. */
 const TEST_CARDS = {
   "4242424242424242": {ok:true},                                   // Visa
   "4000056655665556": {ok:true},                                   // Visa debit
@@ -521,13 +513,6 @@ const TEST_CARDS = {
   "4000000000000127": {ok:false, msg:"Your card's security code is incorrect.", field:"cvc"}
 };
 const digits = v => String(v).replace(/\D/g, "");
-const CARD_NAMES = ["Visa","Mastercard","Amex","Discover","JCB","Diners Club","UnionPay"];
-const TEST_CHIPS = [
-  {label:"Visa 4242 4242 4242 4242", n:"4242424242424242"},
-  {label:"Mastercard 5555 5555 5555 4444", n:"5555555555554444"},
-  {label:"Amex 3782 822463 10005", n:"378282246310005"},
-  {label:"Declined 4000 0000 0000 0002", n:"4000000000000002"}
-];
 /* Detects the card network from the first digits (the IIN/BIN ranges). */
 function cardBrand(n){
   if(/^4/.test(n)) return "Visa";
@@ -580,11 +565,9 @@ function bindCheckout(){
   const exp = document.getElementById("c-exp"), cvc = document.getElementById("c-cvc");
   const brandEl = document.getElementById("c-brand"), payBtn = document.getElementById("pay-btn");
   const payLabel = payBtn.textContent;
-  const brandsRow = document.getElementById("brands"), cvcLabel = document.getElementById("c-cvc-label");
+  const cvcLabel = document.getElementById("c-cvc-label");
   const showBrand = b => {
     brandEl.textContent = b || "Card"; brandEl.classList.toggle("known", !!b);
-    brandsRow.classList.toggle("picked", !!b);
-    brandsRow.querySelectorAll("span").forEach(s => s.classList.toggle("on", s.dataset.brand === b));
     cvc.placeholder = b === "Amex" ? "4 digits" : "3 digits";
     cvcLabel.textContent = b === "Amex" ? "Security code (4 digits on front)" : "Security code (CVV)";
   };
@@ -592,7 +575,7 @@ function bindCheckout(){
 
   num.addEventListener("input", () => {
     const n = digits(num.value).slice(0, 19); num.value = formatCard(n);
-    showBrand(cardBrand(n)); mark("number", "");
+    showBrand(cardBrand(n)); mark("number", ""); say("");
   });
   exp.addEventListener("input", e => {
     let d = digits(exp.value).slice(0, 4);
@@ -603,13 +586,6 @@ function bindCheckout(){
   cvc.addEventListener("input", () => { cvc.value = digits(cvc.value).slice(0, 4); mark("cvc", ""); });
   name.addEventListener("input", () => mark("name", ""));
 
-  document.querySelectorAll("[data-fill]").forEach(btn => btn.addEventListener("click", () => {
-    const c = loadCustomer(), n = btn.dataset.fill;
-    num.value = formatCard(n); showBrand(cardBrand(n));
-    name.value = [c.first, c.last].filter(Boolean).join(" ") || "Test Customer";
-    exp.value = "12 / " + String((new Date().getFullYear() + 2) % 100).padStart(2, "0");
-    cvc.value = cardBrand(n) === "Amex" ? "1234" : "123"; ["number","name","exp","cvc"].forEach(k => mark(k, "")); say("");
-  }));
 
   cardForm.addEventListener("submit", e => {
     e.preventDefault(); say("");
@@ -628,15 +604,10 @@ function bindCheckout(){
     const firstBad = Object.keys(errs).find(k => errs[k]);
     if(firstBad){ ({number:num, name, exp, cvc})[firstBad].focus(); say("Please check your card details.", "error"); return; }
 
-    const test = TEST_CARDS[n];
-    if(!test){
-      num.value = ""; showBrand(""); cvc.value = "";
-      mark("number", "Real cards aren't accepted in this demo store. Use one of the test cards above.");
-      num.focus(); say("This is a test-mode checkout, so no real card was charged.", "error"); return;
-    }
+    const test = TEST_CARDS[n] || {ok:true};
 
     payBtn.disabled = true; payBtn.innerHTML = `<span class="spinner" aria-hidden="true"></span>Processing payment…`;
-    say("Contacting the payment processor…", "busy");
+    say("Authorizing your card…", "busy");
     setTimeout(() => {
       payBtn.disabled = false; payBtn.textContent = payLabel;
       if(!test.ok){
@@ -647,7 +618,7 @@ function bindCheckout(){
       saveOrder({
         no, placedAt: new Date().toISOString(), status: "PAID", customer, totals: t,
         card: {brand: brand || "Card", last4: n.slice(-4)},
-        txn: "TXN-" + randId(12, "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"),
+        txn: "TXN-" + randId(8, "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"),
         auth: randId(6, "0123456789"),
         items: lines.map(l => ({slug:l.p.slug, name:l.p.name, colour:l.p.colour, size:l.size, qty:l.qty, price:l.p.price}))
       });
@@ -664,7 +635,9 @@ function viewOrder(no){
   if(!o || !o.card) return `<div class="empty"><h1>Order not found</h1><p>We couldn't find that order on this device.</p><a class="btn primary" href="${SITE}">Shop the collection</a></div>`;
   const c = o.customer || {}, t = o.totals;
   const prov = (PROVINCES.find(p => p[0] === c.prov) || [c.prov])[0];
-  const when = new Date(o.placedAt).toLocaleString("en-CA", {dateStyle:"long", timeStyle:"short"});
+  const placed = new Date(o.placedAt);
+  const dateStr = placed.toLocaleDateString("en-CA", {month:"long", day:"numeric", year:"numeric"});
+  const timeStr = placed.toLocaleTimeString("en-CA", {hour:"numeric", minute:"2-digit"});
   return `${steps(3)}<div class="confirm">
     <div class="confirm-head">
       <div class="ok-mark">${CHECK}</div>
@@ -673,16 +646,16 @@ function viewOrder(no){
     </div>
     <dl class="facts">
       <div><dt>Order number</dt><dd>${esc(o.no)}</dd></div>
-      <div><dt>Date</dt><dd>${esc(when)}</dd></div>
-      <div><dt>Payment</dt><dd><span class="pill">Paid</span> ${esc(o.card.brand)} •••• ${esc(o.card.last4)}</dd></div>
-      <div><dt>Transaction ID</dt><dd>${esc(o.txn)}</dd></div>
+      <div><dt>Date</dt><dd>${esc(dateStr)}<br><span style="font-weight:400;color:var(--stone)">${esc(timeStr)}</span></dd></div>
+      <div><dt>Payment</dt><dd><span class="pill">Paid</span><br><span class="nowrap">${esc(o.card.brand)} •••• ${esc(o.card.last4)}</span></dd></div>
+      <div><dt>Transaction ID</dt><dd class="nowrap">${esc(o.txn)}</dd></div>
     </dl>
     <section class="panel">
       <div class="two">
         <div><h2 style="font-size:1.1rem;margin-bottom:8px">Shipping to</h2>
           <p>${esc(c.first)} ${esc(c.last)}<br>${esc(c.address)}${c.apt ? ", " + esc(c.apt) : ""}<br>${esc(c.city)}, ${esc(prov)} ${esc(c.postal)}<br>Canada</p></div>
         <div><h2 style="font-size:1.1rem;margin-bottom:8px">Contact &amp; payment</h2>
-          <p>${esc(c.email)}${c.phone ? "<br>" + esc(c.phone) : ""}<br>${esc(o.card.brand)} ending in ${esc(o.card.last4)} · Auth code ${esc(o.auth)}<br><span style="color:var(--stone);font-size:.88rem">Test-mode payment. No real money was charged.</span></p></div>
+          <p>${esc(c.email)}${c.phone ? "<br>" + esc(c.phone) : ""}<br>${esc(o.card.brand)} ending in ${esc(o.card.last4)} · Auth code ${esc(o.auth)}<br><span style="color:var(--stone);font-size:.88rem">Demo store for a class project. No real money was charged.</span></p></div>
       </div>
     </section>
     <section class="panel">

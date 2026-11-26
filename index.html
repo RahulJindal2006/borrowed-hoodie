@@ -3,8 +3,6 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
-<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Borrowed Hoodie · Shop</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧥</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -208,42 +206,6 @@
   footer.site a:hover{text-decoration:underline}
   footer.site .b{font-weight:700;font-size:1.25rem;margin:0 0 6px}
   footer.site p{margin:0;opacity:.8;font-size:.9rem}
-  /* Recommendations */
-  .recs{margin-top:72px}
-  .recs h2{font-size:1.75rem;margin-bottom:6px}
-  .recs .sub{color:var(--stone);margin:0 0 20px;font-size:.95rem}
-  .recs .grid{grid-template-columns:repeat(auto-fill,minmax(180px,1fr))}
-  .card .tag{font-size:.75rem;font-weight:600;color:var(--stone);margin:10px 0 0}
-  .reviews-link{display:inline-block;margin-top:14px;font-size:.92rem}
-
-  /* Chat assistant */
-  .chat-fab{position:fixed;right:22px;bottom:22px;z-index:50;display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:14px 18px;font-weight:600;box-shadow:0 10px 30px rgba(0,0,0,.2)}
-  .chat-fab:hover{background:#000}
-  .chat-fab .dot{width:9px;height:9px;border-radius:50%;background:#4cd185}
-  .chat-peek{position:fixed;right:22px;bottom:84px;z-index:50;max-width:290px;background:var(--paper);border:1px solid var(--line);border-radius:14px 14px 4px 14px;padding:14px 16px;box-shadow:0 12px 30px rgba(0,0,0,.14);font-size:.92rem;cursor:pointer;display:none}
-  .chat-peek.show{display:block;animation:pop .25s ease}
-  .chat-peek .x{position:absolute;top:4px;right:8px;border:0;background:none;color:var(--stone);font-size:1.1rem}
-  @keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .chat{position:fixed;right:22px;bottom:84px;z-index:60;width:min(370px,calc(100vw - 32px));height:min(540px,calc(100vh - 120px));background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.22);display:none;flex-direction:column;overflow:hidden}
-  .chat.open{display:flex;animation:pop .2s ease}
-  .chat-head{background:var(--ink);color:#fff;padding:14px 16px;display:flex;align-items:center;justify-content:space-between}
-  .chat-head b{display:block;font-size:1rem}
-  .chat-head span{font-size:.78rem;opacity:.8}
-  .chat-head button{border:0;background:none;color:#fff;font-size:1.4rem;line-height:1}
-  .chat-log{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#fafafa}
-  .msg{max-width:85%;padding:10px 13px;border-radius:14px;font-size:.92rem;line-height:1.45}
-  .msg.bot{background:var(--paper);border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
-  .msg.me{background:var(--ink);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
-  .msg a{color:inherit;font-weight:600}
-  .chips{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:6px;padding:10px 12px 2px;background:#fafafa;scrollbar-width:thin}
-  .chips button{flex:none;white-space:nowrap;border:1px solid var(--ink);background:var(--paper);border-radius:999px;padding:6px 11px;font-size:.8rem;font-weight:600}
-  .chips button:hover{background:var(--mist)}
-  .chat-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:#fafafa}
-  .chat-form input{flex:1;border:1px solid #cfcfcf;border-radius:999px;padding:10px 14px;font:inherit;font-size:.92rem}
-  .chat-form button{border:0;background:var(--ink);color:#fff;border-radius:999px;padding:0 16px;font-weight:600}
-  .typing{font-size:.8rem;color:var(--stone);align-self:flex-start}
-  @media (max-width:520px){.chat-fab .lbl{display:none}.chat-fab{padding:14px}}
-  @media print{.chat,.chat-fab,.chat-peek{display:none!important}}
 </style>
 </head>
 <body>
@@ -254,9 +216,8 @@
     <nav class="main" aria-label="Main">
       <a class="link" href="https://ebusiness121.wordpress.com/">Home</a>
       <a class="link" href="https://ebusiness121.wordpress.com/products/">Shop</a>
-      <a class="link" href="https://ebusiness121.wordpress.com/blog/">Blog</a>
+      <a class="link" href="https://ebusiness121.wordpress.com/blog/">Journal</a>
       <a class="link" href="https://ebusiness121.wordpress.com/about/">About</a>
-      <a class="link" href="https://ebusiness121.wordpress.com/contact/">Contact</a>
       <a class="cart-btn" href="#/cart" aria-label="Open cart">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
         Cart <span class="count" id="count">0</span>
@@ -272,25 +233,14 @@
     <div><p class="b">Borrowed Hoodie</p><p>Unisex essentials made to be shared.</p></div>
     <div>
       <a href="https://ebusiness121.wordpress.com/products/">Shop</a>
-      <a href="https://ebusiness121.wordpress.com/blog/">Blog</a>
+      <a href="https://ebusiness121.wordpress.com/blog/">Journal</a>
       <a href="https://ebusiness121.wordpress.com/about/">About</a>
-      <a href="https://ebusiness121.wordpress.com/our-commitments/">Our Commitments</a>
-      <a href="https://ebusiness121.wordpress.com/contact/">Contact</a>
       <a href="https://ebusiness121.wordpress.com/privacy-policy/">Privacy Policy</a>
     </div>
   </div>
 </footer>
 
 <div class="toast" id="toast" role="status" aria-live="polite"><span id="toastText">Added to cart</span><a href="#/cart">View cart</a></div>
-
-<div class="chat-peek" id="chatPeek" role="status" aria-live="polite"><button type="button" class="x" id="peekClose" aria-label="Dismiss">×</button><span id="peekText"></span></div>
-<button type="button" class="chat-fab" id="chatFab" aria-controls="chat" aria-expanded="false"><span class="dot" aria-hidden="true"></span><span class="lbl">Chat with us</span><span aria-hidden="true">💬</span></button>
-<section class="chat" id="chat" aria-label="Chat with Borrowed Hoodie">
-  <div class="chat-head"><div><b>Borrowed Hoodie Help</b><span>Automated assistant · team replies within 24h</span></div><button type="button" id="chatClose" aria-label="Close chat">×</button></div>
-  <div class="chat-log" id="chatLog" aria-live="polite"></div>
-  <div class="chips" id="chatChips"></div>
-  <form class="chat-form" id="chatForm" autocomplete="off"><input id="chatInput" placeholder="Ask about sizing, shipping, returns…" aria-label="Type your message" maxlength="300"><button type="submit">Send</button></form>
-</section>
 
 <script>
 const IMG = "https://ebusiness121.wordpress.com/wp-content/uploads/2026/09/";
@@ -325,44 +275,6 @@ const bySlug = s => PRODUCTS.find(p => p.slug === s);
 const money = n => "$" + n.toFixed(2);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const imgUrl = p => IMG + p.img + "?w=800";
-const WP_PAGE = p => SITE + p.slug + "/";
-
-/* Analytics: Google Analytics 4. Paste your GA4 Measurement ID (looks like G-XXXXXXXXXX)
-   to start collecting page views and e-commerce events. Left empty, nothing is loaded or sent. */
-const GA_MEASUREMENT_ID = "";
-window.dataLayer = window.dataLayer || [];
-function gtag(){ dataLayer.push(arguments); }
-if(GA_MEASUREMENT_ID){
-  const g = document.createElement("script");
-  g.async = true; g.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
-  document.head.appendChild(g);
-  gtag("js", new Date());
-  gtag("config", GA_MEASUREMENT_ID, {send_page_view:false});
-}
-const gaItem = (p, extra) => Object.assign({item_id:p.slug, item_name:p.name, item_category:p.cat, item_variant:p.colour, price:p.price}, extra || {});
-function track(event, params){ if(GA_MEASUREMENT_ID) gtag("event", event, params || {}); }
-
-/* Personalisation: remember recently viewed products in this browser only. */
-function loadViewed(){ try{ const v = JSON.parse(localStorage.getItem("bh-viewed") || "[]"); return Array.isArray(v) ? v.filter(bySlug) : []; }catch(e){ return []; } }
-function rememberViewed(slug){ const v = [slug, ...loadViewed().filter(x => x !== slug)].slice(0, 8); try{ localStorage.setItem("bh-viewed", JSON.stringify(v)); }catch(e){} }
-const BEST = ["fleece-hoodie","waffle-lounge-set","heavyweight-tee"];
-function recommend(exclude, n){
-  const viewed = loadViewed(), inCart = loadCart().map(i => i.slug);
-  const likedCats = {};
-  [...viewed, ...inCart].forEach((s, i) => { const p = bySlug(s); if(p) likedCats[p.cat] = (likedCats[p.cat] || 0) + (i < 3 ? 2 : 1); });
-  return PRODUCTS.filter(p => !exclude.includes(p.slug))
-    .map(p => ({p, score:(likedCats[p.cat] || 0) * 2 + (BEST.includes(p.slug) ? 1.5 : 0) + (viewed.includes(p.slug) ? -1 : 0) + Math.random() * 0.3}))
-    .sort((a, b) => b.score - a.score).slice(0, n).map(x => x.p);
-}
-function recCards(list, why){
-  return `<div class="grid">${list.map(p => `<a class="card" href="#/product/${p.slug}"><img src="${imgUrl(p)}" alt="${esc(p.name)}" loading="lazy"><h3>${esc(p.name)}</h3><div class="p">${money(p.price)}</div>${why ? `<p class="tag">${esc(why(p))}</p>` : ""}</a>`).join("")}</div>`;
-}
-function whyText(p){
-  const viewed = loadViewed().map(bySlug).filter(Boolean);
-  if(viewed.some(v => v.cat === p.cat)) return `Because you looked at ${p.cat.toLowerCase()}`;
-  if(BEST.includes(p.slug)) return "Bestseller";
-  return p.badge;
-}
 
 
 let memoryCart = [];
@@ -387,12 +299,10 @@ function toast(msg){
 
 
 function viewShop(){
-  const viewed = loadViewed().map(bySlug).filter(Boolean).slice(0, 4);
   return `<div class="page-head"><h1>Shop the collection</h1><p>Ten unisex pieces in sizes XS–XXL. Pick one to choose your size and quantity.</p></div>
   <div class="grid">${PRODUCTS.map(p=>`
     <a class="card" href="#/product/${p.slug}"><img src="${imgUrl(p)}" alt="${esc(p.name)}" loading="lazy"><h3>${esc(p.name)}</h3><div class="p">${money(p.price)}</div></a>`).join("")}
-  </div>
-  ${viewed.length ? `<section class="recs" aria-labelledby="h-recent"><h2 id="h-recent">Recently viewed</h2><p class="sub">Pick up where you left off.</p>${recCards(viewed)}</section>` : ""}`;
+  </div>`;
 }
 
 function viewProduct(p){
@@ -415,16 +325,11 @@ function viewProduct(p){
       <button type="button" class="btn primary block" id="add">Add to cart · ${money(p.price)}</button>
       <div class="added" id="added"><span>Added to cart</span><a href="#/cart">View cart and check out</a></div>
       <div class="perks"><p>Free shipping on orders over $100.</p><p>Easy returns within 30 days.</p></div>
-      <a class="reviews-link" href="${WP_PAGE(p)}#reviews">★ Read or write a review</a>
     </div>
-  </div>
-  <section class="recs" aria-labelledby="h-related"><h2 id="h-related">You may also like</h2><p class="sub">More ${esc(p.cat.toLowerCase())} from the collection.</p>${recCards(PRODUCTS.filter(x => x.cat === p.cat && x.slug !== p.slug).slice(0, 4))}</section>
-  <section class="recs" aria-labelledby="h-foryou"><h2 id="h-foryou">Recommended for you</h2><p class="sub">Picked from what you've browsed and added to your cart.</p>${recCards(recommend([p.slug, ...PRODUCTS.filter(x => x.cat === p.cat).map(x => x.slug)], 4), whyText)}</section>`;
+  </div>`;
 }
 
 function bindProduct(p){
-  rememberViewed(p.slug);
-  track("view_item", {currency:CURRENCY, value:p.price, items:[gaItem(p)]});
   let size = "M";
   const qtyEl = document.getElementById("qty");
   const addBtn = document.getElementById("add");
@@ -442,7 +347,6 @@ function bindProduct(p){
   addBtn.addEventListener("click", () => {
     const q = clamp(qtyEl.value);
     addToCart(p.slug, size, q);
-    track("add_to_cart", {currency:CURRENCY, value:p.price * q, items:[gaItem(p, {item_variant:size, quantity:q})]});
     document.getElementById("added").classList.add("show");
     toast(`Added to cart: ${q} × ${p.name} (${size})`);
   });
@@ -501,8 +405,7 @@ function viewCart(){
       <a class="btn ghost block" style="margin-top:10px" href="${SITE}">Continue shopping</a>
       <p class="fineprint">Test-mode checkout. No real money is charged.</p>
     </aside>
-  </div>
-  <section class="recs" aria-labelledby="h-complete"><h2 id="h-complete">Complete the look</h2><p class="sub">Recommended for you, based on what's in your cart.</p>${recCards(recommend(lines.map(l => l.p.slug), 4), whyText)}</section>`;
+  </div>`;
 }
 
 function bindCart(){
@@ -513,10 +416,7 @@ function bindCart(){
   document.querySelectorAll(".line .qty input").forEach(inp => inp.addEventListener("change", () => set(+inp.dataset.line, parseInt(inp.value,10) || 1)));
   document.querySelectorAll("[data-remove]").forEach(b => b.addEventListener("click", () => {
     const c = loadCart(); const gone = c.splice(+b.dataset.remove, 1)[0]; saveCart(c); render();
-    if(gone && bySlug(gone.slug)){
-      toast(`Removed: ${bySlug(gone.slug).name} (${gone.size})`);
-      track("remove_from_cart", {currency:CURRENCY, value:bySlug(gone.slug).price * gone.qty, items:[gaItem(bySlug(gone.slug), {item_variant:gone.size, quantity:gone.qty})]});
-    }
+    if(gone && bySlug(gone.slug)) toast(`Removed: ${bySlug(gone.slug).name} (${gone.size})`);
   }));
 }
 
@@ -726,8 +626,6 @@ function bindCheckout(){
         auth: randId(6, "0123456789"),
         items: lines.map(l => ({slug:l.p.slug, name:l.p.name, colour:l.p.colour, size:l.size, qty:l.qty, price:l.p.price}))
       });
-      track("purchase", {transaction_id:no, currency:CURRENCY, value:t.total / 100, tax:t.tax / 100, shipping:t.ship / 100,
-        items:lines.map(l => gaItem(l.p, {item_variant:l.size, quantity:l.qty}))});
       num.value = exp.value = cvc.value = name.value = "";
       saveCart([]);
       location.hash = "#/order/" + no;
@@ -798,77 +696,7 @@ function render(){
   document.title = `${title} · Borrowed Hoodie`;
   window.scrollTo(0,0);
   updateCount();
-  track("page_view", {page_title:document.title, page_location:location.href, page_path:"/borrowed-hoodie/" + location.hash});
-  const lines = cartLines(), ga = lines.map(l => gaItem(l.p, {item_variant:l.size, quantity:l.qty})), val = totals(lines).sub / 100;
-  if(parts[0] === "cart" && lines.length) track("view_cart", {currency:CURRENCY, value:val, items:ga});
-  if(parts[0] === "checkout" && lines.length) track("begin_checkout", {currency:CURRENCY, value:val, items:ga});
-  chatContext(parts);
 }
-/* ── Chat assistant: automated greeting + instant answers, hand-off to the team ── */
-const CONTACT = "https://ebusiness121.wordpress.com/contact/";
-const chatEl = document.getElementById("chat"), chatLog = document.getElementById("chatLog");
-const chatFab = document.getElementById("chatFab"), chatPeek = document.getElementById("chatPeek");
-let chatCtx = {page:"shop"}, peekTimer = null, chatStarted = false;
-const ss = {get:k => { try{ return sessionStorage.getItem(k); }catch(e){ return null; } }, set:(k,v) => { try{ sessionStorage.setItem(k, v); }catch(e){} }};
-const ANSWERS = [
-  {keys:["gift card","gift certificate","voucher","coupon","discount","promo"], chip:"",
-   text:() => `We don't offer gift cards or promo codes yet, but every order over $100 ships free. <a href="${CONTACT}">Message us</a> if you're buying a gift and we'll help you pick a size.`},
-  {keys:["size","sizing","fit","small","large","xl","xs","measure"], chip:"Sizing help",
-   text:() => `Everything is unisex, XS–XXL. Stay true to size for our relaxed fit, or size up one for the oversized "borrowed" look.${chatCtx.product ? ` The ${esc(chatCtx.product.name)} runs true to size.` : ""}`},
-  {keys:["ship","shipping","deliver","delivery","arrive","how long"], chip:"Shipping",
-   text:() => { const sub = totals(cartLines()).sub / 100; return `Shipping is free on orders over $100, otherwise $9.99. Orders ship within 2 business days.${sub > 0 && sub < 100 ? ` You're ${money(100 - sub)} away from free shipping!` : ""}`; }},
-  {keys:["return","refund","exchange","send back"], chip:"Returns",
-   text:() => `Easy returns within 30 days, no questions asked. Just <a href="${CONTACT}">message us</a> with your order number and we'll send you a return label.`},
-  {keys:["order","track","where is","status","confirmation"], chip:"My order",
-   text:() => { const o = loadOrders()[0]; return o ? `Your latest order is <a href="#/order/${esc(o.no)}">${esc(o.no)}</a>. Open it to see your items and receipt. For delivery questions, <a href="${CONTACT}">message the team</a>.` : `I can't see any orders in this browser yet. If you ordered on another device, <a href="${CONTACT}">send us a message</a> with your email and we'll look it up.`; }},
-  {keys:["pay","payment","card","visa","mastercard","debit","credit"], chip:"Payment",
-   text:() => `We accept debit and credit cards, including Visa and Mastercard. Card details are checked in your browser and never stored on our servers.`},
-  {keys:["fabric","material","cotton","fleece","wash","care","sustainab","eco","environment"], chip:"Materials & care",
-   text:() => `We use heavyweight cotton and fleece made to last. Wash cold and hang dry to keep pieces soft for years. Read more about <a href="https://ebusiness121.wordpress.com/our-commitments/">our commitments</a>.`},
-  {keys:["recommend","suggest","popular","best","gift"], chip:"What's popular?",
-   text:() => { const r = recommend(chatCtx.product ? [chatCtx.product.slug] : [], 2); return `Based on what you've browsed, try the <a href="#/product/${r[0].slug}">${esc(r[0].name)}</a> (${money(r[0].price)}) or the <a href="#/product/${r[1].slug}">${esc(r[1].name)}</a> (${money(r[1].price)}).`; }},
-  {keys:["human","person","agent","talk","help","contact","email","someone"], chip:"Talk to a person",
-   text:() => `Our team replies within 24 hours, Monday to Saturday. <a href="${CONTACT}">Send us a message here</a> and you'll get an instant confirmation.`}
-];
-function greeting(){
-  if(chatCtx.page === "product" && chatCtx.product) return `Hi! 👋 Questions about the ${esc(chatCtx.product.name)}? I can help with sizing, shipping or returns.`;
-  if(chatCtx.page === "cart") return `Hi! 👋 Need a hand before you check out? Ask me about shipping, returns or payment.`;
-  if(chatCtx.page === "checkout") return `Almost there! 🔒 Any questions about payment or delivery? I'm here to help.`;
-  if(chatCtx.page === "order") return `Thanks for your order! 🎉 Questions about delivery or returns? Just ask.`;
-  return `Hi! 👋 Welcome to Borrowed Hoodie. Looking for something? I can help with sizing, shipping, returns or recommendations.`;
-}
-function addMsg(html, who){ const d = document.createElement("div"); d.className = "msg " + who; d.innerHTML = html; chatLog.appendChild(d); chatLog.scrollTop = chatLog.scrollHeight; return d; }
-function botSay(html){
-  const t = document.createElement("div"); t.className = "typing"; t.textContent = "Borrowed Hoodie is typing…"; chatLog.appendChild(t); chatLog.scrollTop = chatLog.scrollHeight;
-  setTimeout(() => { t.remove(); addMsg(html, "bot"); }, 600);
-}
-function renderChips(){ document.getElementById("chatChips").innerHTML = ANSWERS.map((a, i) => a.chip ? `<button type="button" data-a="${i}">${a.chip}</button>` : "").join(""); }
-function answer(q){
-  const t = q.toLowerCase();
-  const hit = ANSWERS.find(a => a.keys.some(k => new RegExp("\\b" + k.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).test(t)));
-  botSay(hit ? hit.text() : `I'm not sure about that one, but our team can help. <a href="${CONTACT}">Send us a message</a> and you'll hear back within 24 hours.`);
-  track("chat_question", {topic: hit ? (hit.chip || "discounts") : "other"});
-}
-function openChat(){
-  chatEl.classList.add("open"); chatFab.setAttribute("aria-expanded", "true"); chatPeek.classList.remove("show"); clearTimeout(peekTimer);
-  if(!chatStarted){ chatStarted = true; renderChips(); addMsg(greeting(), "bot"); track("chat_open", {page:chatCtx.page}); }
-  setTimeout(() => document.getElementById("chatInput").focus(), 50);
-}
-function closeChat(){ chatEl.classList.remove("open"); chatFab.setAttribute("aria-expanded", "false"); chatFab.focus(); }
-chatFab.addEventListener("click", () => chatEl.classList.contains("open") ? closeChat() : openChat());
-document.getElementById("chatClose").addEventListener("click", closeChat);
-chatPeek.addEventListener("click", e => { if(e.target.id === "peekClose"){ chatPeek.classList.remove("show"); return; } openChat(); });
-document.getElementById("chatChips").addEventListener("click", e => { const b = e.target.closest("[data-a]"); if(!b) return; addMsg(esc(b.textContent), "me"); botSay(ANSWERS[+b.dataset.a].text()); track("chat_question", {topic:b.textContent}); });
-document.getElementById("chatForm").addEventListener("submit", e => { e.preventDefault(); const i = document.getElementById("chatInput"), q = i.value.trim(); if(!q) return; addMsg(esc(q), "me"); i.value = ""; answer(q); });
-document.addEventListener("keydown", e => { if(e.key === "Escape" && chatEl.classList.contains("open")) closeChat(); });
-function chatContext(parts){
-  chatCtx = {page: parts[0] || "shop", product: parts[0] === "product" ? bySlug(parts[1]) : null};
-  clearTimeout(peekTimer); chatPeek.classList.remove("show");
-  const key = "bh-greeted-" + chatCtx.page;
-  if(chatEl.classList.contains("open") || ss.get(key)) return;
-  peekTimer = setTimeout(() => { document.getElementById("peekText").innerHTML = greeting(); chatPeek.classList.add("show"); ss.set(key, "1"); }, 4000);
-}
-
 window.addEventListener("hashchange", render);
 window.addEventListener("storage", () => updateCount());
 render();
